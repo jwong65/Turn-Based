@@ -1,9 +1,24 @@
+/* --cardinal: #c41e3dff;
+--burgundy: #7d1128ff;
+--folly: #ff2c55ff;
+--chocolate-cosmos: #3c0919ff;
+--amaranth: #e2294fff; */
 body{
-
+    background-color: #3c0919ff;
+}
+div{
+    /* Used for testing */
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border: 2px solid black;
 }
 #playerHealth{
     display: flex;
-    height: 100px;
-    width: 100px;
-    background-color: aqua;
+    height: 300px;
+    width: 300px;
+    background-color: #e2294fff;
+    vertical-align: middle;
+    text-align: center;
 }
