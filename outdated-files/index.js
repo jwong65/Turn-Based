@@ -12,3 +12,19 @@ displayHealth(pHealth, 'playerHealthInfo')
 function gameOverHealth(){
 
 }
+
+// // Former HTML files
+// <!-- <div id="playerHealth">
+// <div class="center">
+//     <div id='playerHealthInfo'></div>
+// </div>
+// </div>
+// <div id="mainSec">
+// <div id="infoBox">
+//     15
+// </div>
+// </div>
+
+// <div id="menu"></div>
+
+// <script src="index.js"></script> -->
