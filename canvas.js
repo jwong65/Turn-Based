@@ -4,16 +4,42 @@ const ctx = canvas.getContext('2d')
 canvas.width = 64*16 
 canvas.height = 64*9
 
+class Player{
+    constructor(){
+        this.position = {
+            charX: 100,
+            charY: 100
+        }
+        this.charWidth = 100,
+        this.charHeight = 100
+        this.sides = {
+            bottom: this.position.charY + this.charHeight
+        }
+    }
+    draw(){
+        ctx.fillStyle = '#FF8F8F'
+        ctx.fillRect(this.position.charX, this.position.charY, this.charWidth, this.charHeight)
+    }
+    update(){
+        if( this.sides.bottom <canvas.height){
+            this.position.charY++
+            this.sides.bottom =this.position.charY + this.charHeight
+        }
 
-let charY = 100
-let charX = 100
-ctx.fillStyle='#FF8F8F'
-// x, y, width, height
-ctx.fillRect(charX, charY, 100,100)
+    }
+}
+
+// let charY = 100
+// let charX = 100
+// ctx.fillStyle='#FF8F8F'
+// // x, y, width, height
+// ctx.fillRect(charX, charY, 100,100)
 // Variable to determine the bottom of the character's hitbox.
 // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
-const charHeight= 100
-let bottom = charY+100
+// const charHeight= 100
+// let bottom = charY+100
+
+const player = new Player()
 
 function animationLoop(){
     // Callback to the animation keep animating.
@@ -22,14 +48,9 @@ function animationLoop(){
     ctx.fillStyle='black'
     ctx.fillRect(0,0, canvas.width, canvas.height)
 
-    // ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.fillStyle='#FF8F8F'
-    ctx.fillRect( charX, charY, 100, charHeight)
-    
-    // This is to test the bottom of character 
-    if (bottom <canvas.height){
-        charY++
-        bottom = charY+charHeight
-    }
+    // This will call the draw function from the Player class.
+    player.draw()
+    player.update()
+
 }
 animationLoop()
