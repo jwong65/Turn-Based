@@ -22,17 +22,24 @@ h1{
 .center{
     text-align: center;
 }
+/* --light-yellow: #faf8d4ff;
+--almond: #ebdccbff;
+--dun: #c3baaaff;
+--taupe-gray: #91818aff;
+--rose-quartz: #b2a3b5ff; */
 #mainSec{
-    background-color: white;
+    background-color: #faf8d4ff;
     width: 100%;
     height:100%;
+    border: 1px solid #91818aff;
 }
 #infoBox{
-    background-color: #ff2c55ff;
+    background-color: #ebdccbff;
     width: 600px;
-    height: 100%;
+    /* height: 100%; */
+    height: 500px;
     margin: auto;
-    border: 1px solid white;
+    border: 1px solid #c3baaaff;
 }
 #playerHealth{
     display: flex;
