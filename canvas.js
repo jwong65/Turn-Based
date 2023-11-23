@@ -7,6 +7,6 @@ canvas.height = 64*9
 // fillRect( x value, y value, width, height)
 ctx.fillRect(0,0, canvas.width, canvas.height)
 
-ctx.fillStyle('red')
+ctx.fillStyle='#FF8F8F'
 // x, y, width, height
 ctx.fillRect(100, 100, 100,100)
