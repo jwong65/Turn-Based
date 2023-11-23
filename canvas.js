@@ -6,12 +6,14 @@ canvas.height = 64*9
 
 class Player{
     constructor(){
+        // Variable to determine the bottom of the character's hitbox.
         this.position = {
             charX: 100,
             charY: 100
         }
         this.charWidth = 100,
         this.charHeight = 100
+        // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
         this.sides = {
             bottom: this.position.charY + this.charHeight
         }
@@ -29,16 +31,6 @@ class Player{
     }
 }
 
-// let charY = 100
-// let charX = 100
-// ctx.fillStyle='#FF8F8F'
-// // x, y, width, height
-// ctx.fillRect(charX, charY, 100,100)
-// Variable to determine the bottom of the character's hitbox.
-// This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
-// const charHeight= 100
-// let bottom = charY+100
-
 const player = new Player()
 
 function animationLoop(){
@@ -50,6 +42,7 @@ function animationLoop(){
 
     // This will call the draw function from the Player class.
     player.draw()
+    // This will continue the update the character 
     player.update()
 
 }
