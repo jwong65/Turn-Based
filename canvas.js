@@ -12,7 +12,7 @@ ctx.fillStyle='#FF8F8F'
 ctx.fillRect(charX, charY, 100,100)
 // Variable to determine the bottom of the character's hitbox.
 // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
-const height= 100
+const charHeight= 100
 let bottom = charY+100
 
 function animationLoop(){
@@ -24,13 +24,12 @@ function animationLoop(){
 
     // ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle='#FF8F8F'
-    ctx.fillRect( charX, charY, 100, height)
+    ctx.fillRect( charX, charY, 100, charHeight)
     
     // This is to test the bottom of character 
     if (bottom <canvas.height){
         charY++
-        bottom = charY+100
+        bottom = charY+charHeight
     }
 }
-
 animationLoop()
