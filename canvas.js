@@ -25,7 +25,12 @@ function animationLoop(){
     // ctx.clearRect(0, 0, canvas.width, canvas.height)
     ctx.fillStyle='#FF8F8F'
     ctx.fillRect( charX, charY, 100, height)
-    charY++
+    
+    // This is to test the bottom of character 
+    if (bottom <canvas.height){
+        charY++
+        bottom = charY+100
+    }
 }
 
 animationLoop()
