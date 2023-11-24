@@ -5,10 +5,10 @@ canvas.width = 1024
 canvas.height = 576
 
 class Sprite{
-    constructor({position}){
+    constructor({position, imageSource}){
         this.position = position
         this.image = new Image()
-        this.image.src = './assets/images/Stage1.png'
+        this.image.src = imageSource
     }
     draw(){
         ctx.drawImage(this.image, this.position.x, this.position.y)
@@ -21,6 +21,7 @@ const backgroundLevel = new Sprite({
         x: 0,
         y: 0,
     },
+    imageSource: './assets/images/Stage1.png'
 })
 const player = new Player()
 
