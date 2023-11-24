@@ -32,7 +32,9 @@ window.addEventListener('keyup', (event)=>{
             break
         case 'w':
         case 'ArrowUp':
-            player.velocity.y = 0
+            if (player.velocity.y < 0) {
+                player.velocity.y = 0;
+            }
             break
         // case 's'
     }

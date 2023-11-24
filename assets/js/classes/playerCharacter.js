@@ -2,16 +2,16 @@ class Player{
     constructor(){
         // Variable to determine the bottom of the character's hitbox.
         this.position = {
-            charX: 100,
-            charY: 100
+            charX: 64,
+            charY: 64
         }
         this.velocity={
             // We need a x and y axis for each veloctiy
             x: 0,
             y: 0
         }
-        this.charWidth = 100,
-        this.charHeight = 100
+        this.charWidth = 64;
+        this.charHeight = 64;
         // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
         this.sides = {
             bottom: this.position.charY + this.charHeight
@@ -32,7 +32,9 @@ class Player{
             this.sides.bottom =this.position.charY + this.charHeight
         } 
         // Need this else statement otherwise it will not stop at the height of the bottom.
-        else this.velocity.y =0
-
+        else {
+            this.velocity.y =0
+            this.position.charY = canvas.height - this.charHeight
+        }
     }
 }
