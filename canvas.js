@@ -30,5 +30,24 @@ window.addEventListener('keydown', (event)=>{
                 player.velocity.y = -15
                 break
             }
+        case 'a':
+            player.velocity.x = -4
+            break
+        case 'd':
+            player.velocity.x = 4
+            break
+        // case 's'
+    }
+})
+
+window.addEventListener('keyup', (event)=>{
+    switch(event.key){
+        case 'a':
+            player.velocity.x = 0
+            break
+        case 'd':
+            player.velocity.x = 0
+        case 'w':
+            player.velocity.y = 0
     }
 })

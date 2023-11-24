@@ -23,6 +23,7 @@ class Player{
         ctx.fillRect(this.position.charX, this.position.charY, this.charWidth, this.charHeight)
     }
     update(){
+        this.position.charX += this.velocity.x
         this.position.charY += this.velocity.y
         this.position.bottom = this.position.charY +this.charHeight
         // Position is being increased consistently by the y velo.
