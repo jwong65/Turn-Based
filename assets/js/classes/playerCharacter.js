@@ -1,5 +1,7 @@
 class Player{
-    constructor(){
+    constructor({
+        collisionBlocks=[]
+    }){
         // Variable to determine the bottom of the character's hitbox.
         this.position = {
             charX: 64,
@@ -17,6 +19,7 @@ class Player{
             bottom: this.position.charY + this.charHeight
         }
         this.gravity = 1
+        this.collisionBlocks = collisionBlocks
     }
     draw(){
         ctx.fillStyle = '#FF8F8F'

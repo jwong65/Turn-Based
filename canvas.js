@@ -16,7 +16,9 @@ const backgroundLevel = new Sprite({
     },
     imageSource: './assets/images/Stage1.png'
 })
-const player = new Player()
+const player = new Player({
+    collisionBlocks
+})
 
 const keyName  =['w','a','d','ArrowUp','ArrowLeft','ArrowRight']
 const keys = {};
