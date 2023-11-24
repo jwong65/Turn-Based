@@ -24,16 +24,19 @@ animationLoop()
 window.addEventListener('keydown', (event)=>{
     console.log(event)
     switch(event.key){
-        case 'w': 
+        case 'w':
+        case 'ArrowUp':
             if (player.velocity.y === 0)
             {
                 player.velocity.y = -15
                 break
             }
         case 'a':
+        case 'ArrowLeft':
             player.velocity.x = -4
             break
         case 'd':
+        case 'ArrowRight':
             player.velocity.x = 4
             break
         // case 's'
@@ -43,11 +46,15 @@ window.addEventListener('keydown', (event)=>{
 window.addEventListener('keyup', (event)=>{
     switch(event.key){
         case 'a':
+        case 'd':
+        case 'ArrowLeft':
+        case 'ArrowRight':
             player.velocity.x = 0
             break
-        case 'd':
-            player.velocity.x = 0
         case 'w':
+        case 'ArrowUp':
             player.velocity.y = 0
+            break
+        // case 's'
     }
 })
