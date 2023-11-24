@@ -25,7 +25,7 @@ class Player{
     update(){
         this.position.charY += this.velocity.y
         // Position is being increased consistently by the y velo.
-        if( this.sides.bottom <canvas.height){
+        if( this.sides.bottom +this.velocity.y <canvas.height){
             this.velocity.y+= this.gravity
             this.sides.bottom =this.position.charY + this.charHeight
         } 
