@@ -25,7 +25,10 @@ window.addEventListener('keydown', (event)=>{
     console.log(event)
     switch(event.key){
         case 'w': 
-            player.velocity.y = -10
-            break
+            if (player.velocity.y === 0)
+            {
+                player.velocity.y = -15
+                break
+            }
     }
 })
