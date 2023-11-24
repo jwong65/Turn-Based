@@ -9,3 +9,26 @@
     return rows
     }
     
+
+    Array.prototype.createObjectsFrom2D = function (){
+        const objects =[]
+        this.forEach((row, y) => {
+            row.forEach((symbol, x)=>{
+                if (symbol === 225){
+                    // Each collision will be pushed
+                    objects.push(
+                        new CollisionBlock({
+                            position:{
+                                x:x*32,
+                                y:y*32
+                            },
+        
+                        })
+                    )
+        
+                }
+            })
+            
+        });
+        return objects
+    }
