@@ -3,7 +3,7 @@
 ## Canvas based platforming game
 This project uses the experience with the canvas in my other project. That project can be found here and the resources are listed [here](https://github.com/jwong65/WebGame). <br />
  
-### Following information is also in previous project
+### Some of the following information can be found in my previous project, but is expanded upon.
 ## Learning to use a canvas to test out the spritesheet.
 Other functions used include [drawImage](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage) and [requestAnimationFrame()](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).<br/>Following tutorial that was written by Martin Himmel on [Animating Sprite Sheets with JavaScript](https://dev.to/martyhimmel/animating-sprite-sheets-with-javascript-ag3) and [Moving a Sprite Sheet Character](https://dev.to/martyhimmel/moving-a-sprite-sheet-character-with-javascript-3adg). <br />
 Following the tutorial that was made by Chris Courses, [here](https://chriscourses.com/courses/).
@@ -19,5 +19,6 @@ Web3 resource for drawImage [W3](https://www.w3schools.com/jsref/canvas_drawimag
 MDN resource for animation, used drawImage as reference [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations).
 
 ### Javascript Resources
-Using switch cases, [MDN resource](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) that evaluates an expression and will execute if the case matches. This was used for the event-listener instead of if-else cases.
+Using switch cases, [MDN resource](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) that evaluates an expression and will execute if the case matches. This was used for the event-listener instead of if-else cases. <br />
+Common code blocks for switch case, [W3 resource](https://www.w3schools.com/js/js_switch.asp). Default values and strict comparison are used. Common blocks are used for arrow keys in conjunction with wasd.
 
