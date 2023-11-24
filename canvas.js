@@ -4,6 +4,17 @@ const ctx = canvas.getContext('2d')
 canvas.width = 1024 
 canvas.height = 576
 
+class Sprite{
+    constructor({position}){
+        this.position = position
+        this.image = new Image()
+        this.image.src = './assets/images/Stage1.png'
+    }
+    draw(){
+        ctx.drawImage(this.image, this.position.x, this.position.y)
+    }
+}
+
 const player = new Player()
 
 const keyName  =['w','a','d','ArrowUp','ArrowLeft','ArrowRight']
