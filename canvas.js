@@ -15,6 +15,13 @@ class Sprite{
     }
 }
 
+const backgroundLevel = new Sprite({
+    // The position will be 0,0 as it draws from the top left.
+    position:{
+        x: 0,
+        y: 0,
+    },
+})
 const player = new Player()
 
 const keyName  =['w','a','d','ArrowUp','ArrowLeft','ArrowRight']
@@ -29,6 +36,7 @@ function animationLoop(){
     // fillRect( x value, y value, width, height) This is the background of the whole canvas.
     ctx.fillStyle='black'
     ctx.fillRect(0,0, canvas.width, canvas.height)
+    backgroundLevel.draw()
 
     player.velocity.x = 0
     if (keys.d.pressed){
