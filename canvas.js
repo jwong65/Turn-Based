@@ -34,8 +34,8 @@ function animationLoop(){
     // Callback to the animation keep animating.
     window.requestAnimationFrame(animationLoop)
     // fillRect( x value, y value, width, height) This is the background of the whole canvas.
-    ctx.fillStyle='black'
-    ctx.fillRect(0,0, canvas.width, canvas.height)
+    // ctx.fillStyle='black'
+    // ctx.fillRect(0,0, canvas.width, canvas.height)
     backgroundLevel.draw()
 
     player.velocity.x = 0
