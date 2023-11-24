@@ -25,11 +25,6 @@ function animationLoop(){
     }else if (keys.a.pressed){
         player.velocity.x =-5
     }
-    console.log("keys.d.pressed:", keys.d.pressed);
-    console.log("keys.a.pressed:", keys.a.pressed);
-    console.log("player.velocity.x:", player.velocity.x);
-
-
     // This will call the draw function from the Player class.
     player.draw()
     // This will continue the update the character 
