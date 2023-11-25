@@ -29,14 +29,7 @@ class Player{
         this.checkforHorizontal()
         this.applyGravity()
         this.checkforVertical()
-        this.sides.bottom = this.position.charY + this.charHeight;
-        // Position is being increased consistently by the y velo.
-        // if( this.sides.bottom +this.velocity.y <canvas.height){
-        //     this.velocity.y+= this.gravity
-        //     this.sides.bottom =this.position.charY + this.charHeight
-        // } 
-        // Need this else statement otherwise it will not stop at the height of the bottom.
-        
+        this.sides.bottom = this.position.charY + this.charHeight;        
     }
     checkforHorizontal(){
             

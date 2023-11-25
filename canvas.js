@@ -7,7 +7,6 @@ canvas.height = 576
 
 const parsedCollisions = collisionsLevel1.parse2D()
 const collisionBlocks= parsedCollisions.createObjectsFrom2D()
-console.log(collisionBlocks)
 
 const backgroundLevel = new Sprite({
     // The position will be 0,0 as it draws from the top left.
