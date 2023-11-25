@@ -11,8 +11,8 @@ class Player extends Sprite{
             x: 0,
             y: 0
         }
-        this.charWidth = 32;
-        this.charHeight = 32;
+        // this.charWidth = 32;
+        // this.charHeight = 32;
         // This is y position + height of the character. Need to have a const height so that can be applied to the fillRect.
         this.sides = {
             bottom: this.position.y + this.charHeight
