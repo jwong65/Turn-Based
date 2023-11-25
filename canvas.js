@@ -69,12 +69,19 @@ function animationLoop(){
     if (keys.d.pressed){
         player.switchSprite('walkRight')
         player.velocity.x =4;
+        player.lastDirectionface = 'right'
     }else if (keys.a.pressed){
         player.velocity.x =-4
         player.switchSprite('walkLeft')
+        player.lastDirectionface = 'left'
     }
     else{
-        player.switchSprite('idleFacingRight')
+        // If player last pressed walkLeft they should idleFacingLeft.
+        if(player.lastDirectionface ==='left'){
+            player.switchSprite('idleFacingLeft')
+        }else{
+            player.switchSprite('idleFacingRight')
+        }
     }
     // This will call the draw function from the Player class.
     player.draw()
