@@ -1,6 +1,6 @@
 class Player extends Sprite{
     constructor({collisionBlocks=[], imageSource, frameRate}){
-        super({imageSource, frameRate});
+        super({imageSource, frameRate, animations});
         // Variable to determine the bottom of the character's hitbox.
         this.position = {
             x: 100,
@@ -24,6 +24,8 @@ class Player extends Sprite{
         // Testing for hitbox
         // ctx.fillStyle = 'rgba(0,0,225,0.25)'
         // ctx.fillRect(this.position.x, this.position.y, this.charWidth, this.charHeight)
+        // ctx.fillStyle='rgba(0,0,200, 0.25)'
+        // ctx.fillRect(this.hitbox.position.x, this.hitbox.position.y, this.hitbox.charWidth, this.hitbox.charHeight)
         this.position.x += this.velocity.x
         // Horizontal collision
         this.checkforHorizontal()
@@ -38,9 +40,7 @@ class Player extends Sprite{
             charWidth: 32,
             charHeight: 32
         }
-        ctx.fillStyle='rgba(0,0,200, 0.25)'
-        ctx.fillRect(this.hitbox.position.x, this.hitbox.position.y, this.hitbox.charWidth, this.hitbox.charHeight)
-
+        
         this.checkforVertical()
         this.sides.bottom = this.position.y + this.charHeight;        
     }

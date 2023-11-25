@@ -20,6 +20,32 @@ const player = new Player({
     collisionBlocks, 
     imageSource:'./assets/images/character/Owlet_Monster_Idle_4.png',
     frameRate: 4,
+    animations:{
+        idleFacingRight:{
+            frameRate: 4,
+            frameBuffer: 5,
+            loop: true,
+            imageSource:'./assets/images/character/Owlet_Monster_Idle_4.png'
+        },
+        idleFacingLeft:{
+            frameRate: 4,
+            frameBuffer: 5,
+            loop: true,
+            imageSource: './assets/images/character/Owlet_Monster_Idle_Left_4.png'
+        },
+        walkLeft:{
+            frameRate: 6,
+            frameBuffer: 5,
+            loop: true,
+            imageSource: './assets/images/character/Owlet_Monster_Walk_Left_6.png'
+        },
+        walkRight:{
+            frameRate: 6,
+            frameBuffer: 5,
+            loop: true,
+            imageSource: './assets/images/character/Owlet_Monster_Walk_6.png'
+        }
+    }
 })
 
 const keyName  =['w','a','d','ArrowUp','ArrowLeft','ArrowRight']
