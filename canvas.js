@@ -19,6 +19,7 @@ const backgroundLevel = new Sprite({
 const player = new Player({
     collisionBlocks, 
     imageSource:'./assets/images/character/Owlet_Monster_Idle_4.png',
+    frameRate: 4,
 })
 
 const keyName  =['w','a','d','ArrowUp','ArrowLeft','ArrowRight']

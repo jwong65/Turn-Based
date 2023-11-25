@@ -5,7 +5,7 @@ class Sprite{
         this.image.src = imageSource
         this.image.onload =()=>{
             this.loaded = true
-            this.charWidth = this.image.width
+            this.charWidth = this.image.width/frameRate
             this.charHeight = this.image.height
         }
         this.loaded = false
@@ -19,9 +19,18 @@ class Sprite{
                 x:0,
                 y:0
             },
-            width: this.width,
-            height: this.height
+            width: this.charWidth,
+            height: this.charHeight
         }
-        ctx.drawImage(this.image, cropbox.position.x, cropbox.position.y, cropbox.width, cropbox.height, this.position.x, this.position.y)
-    }
+        ctx.drawImage(
+            this.image,
+            cropbox.position.x,
+            cropbox.position.y,
+            cropbox.width,
+            cropbox.height,
+            this.position.x,
+            this.position.y,
+            this.charWidth, 
+            this.charHeight)
+        }
 }

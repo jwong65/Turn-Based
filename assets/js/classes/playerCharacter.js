@@ -1,6 +1,6 @@
 class Player extends Sprite{
-    constructor({collisionBlocks=[], imageSource}){
-        super({imageSource});
+    constructor({collisionBlocks=[], imageSource, frameRate}){
+        super({imageSource, frameRate});
         // Variable to determine the bottom of the character's hitbox.
         this.position = {
             x: 100,
