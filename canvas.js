@@ -18,7 +18,7 @@ const backgroundLevel = new Sprite({
 })
 const player = new Player({
     collisionBlocks, 
-    imageSource:'./assets/images/Owlet_Monster_Jump_8.png',
+    imageSource:'./assets/images/character/Owlet_Monster_Jump_8.png',
 })
 
 const keyName  =['w','a','d','ArrowUp','ArrowLeft','ArrowRight']
