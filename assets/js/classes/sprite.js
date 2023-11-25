@@ -10,13 +10,17 @@ class Sprite{
         }
         this.loaded = false
         this.frameRate = frameRate
+        // Simialr to how drawImage works this is to get the next frame
+        this.currentFrame =0
+        this.elapsedFrames = 0
+        this.frameBuffer  = 2
     }
     draw(){
         // This is so the background will not continue to load if the background is already drawn
         if(!this.loaded) return
         const cropbox={
             position:{
-                x:0,
+                x:this.charWidth*this.currentFrame,
                 y:0
             },
             width: this.charWidth,
@@ -32,5 +36,16 @@ class Sprite{
             this.position.y,
             this.charWidth, 
             this.charHeight)
+
+            this.updateFrame()
+        }
+        // Similar to my previous idle()
+        updateFrame(){
+            if(this.currentFrame<this.frameRate -1){
+                this.currentFrame++
+            }
+            else{
+                this.currentFrame=0
+            }
         }
 }
