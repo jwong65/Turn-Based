@@ -1,4 +1,4 @@
-class Player{
+class Player extends Sprite{
     constructor({collisionBlocks=[]}){
         // Variable to determine the bottom of the character's hitbox.
         this.position = {
@@ -10,8 +10,8 @@ class Player{
             x: 0,
             y: 0
         }
-        this.charWidth = 32;
-        this.charHeight = 32;
+        this.charWidth = 64;
+        this.charHeight = 64;
         // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
         this.sides = {
             bottom: this.position.charY + this.charHeight
