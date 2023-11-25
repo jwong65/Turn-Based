@@ -39,6 +39,15 @@ class Player extends Sprite{
         this.checkforVertical()
         this.sides.bottom = this.position.y + this.charHeight;        
     }
+    switchSprite(name){
+        if(this.image === this.animations[name].image) {
+            return
+        }
+        this.currentFrame =0
+        this.image = this.animations[name].image
+        this.frameRate = this.animations[name].frameRate
+        this.frameBuffer = this.animations[name].frameBuffer
+    }
     checkforHorizontal(){
             
     for (let i=0; i<this.collisionBlocks.length; i++){

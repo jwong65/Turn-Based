@@ -67,7 +67,7 @@ function animationLoop(){
 
     player.velocity.x = 0
     if (keys.d.pressed){
-        // player.switchSprite
+        player.switchSprite('walkRight')
         player.velocity.x =4;
     }else if (keys.a.pressed){
         player.velocity.x =-4
