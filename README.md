@@ -15,8 +15,9 @@ Canvas components [Game Components](https://www.w3schools.com/graphics/game_comp
 More informaton on how to control the components [controllers](https://www.w3schools.com/graphics/game_controllers.asp) which include having buttons, keyboard access and mouse control. This project currently utilizes the keyboard but considering the mouse control and looking into mobile devices.
 
 ### Basic animation resources
-Web3 resource for drawImage [W3](https://www.w3schools.com/jsref/canvas_drawimage.asp).
-MDN resource for animation, used drawImage as reference [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations).
+Web3 resource for drawImage [W3](https://www.w3schools.com/jsref/canvas_drawimage.asp). <br />
+MDN resource for animation, used drawImage as reference [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_animations). <br />
+Previous project and spritework was done in this repository [Web-Game](https://github.com/jwong65/WebGame)
 
 ### Javascript Resources
 Using switch cases, [MDN resource](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) that evaluates an expression and will execute if the case matches. This was used for the event-listener instead of if-else cases. <br />
