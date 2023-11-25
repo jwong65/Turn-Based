@@ -22,4 +22,7 @@ Previous project and spritework was done in this repository [Web-Game](https://g
 ### Javascript Resources
 Using switch cases, [MDN resource](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch) that evaluates an expression and will execute if the case matches. This was used for the event-listener instead of if-else cases. <br />
 Common code blocks for switch case, [W3 resource](https://www.w3schools.com/js/js_switch.asp). Default values and strict comparison are used. Common blocks are used for arrow keys in conjunction with wasd.
+Javascript classes, needed for creating objects in the game. [MDN Resource on Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) and MDN documentation on the [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) keyword for extending the classes. <br />
+Javascript documentation for constructor from [W3](https://www.w3schools.com/js/js_classes.asp).
 
+Will update te wiki later with this readme as a template after the project is complete.
