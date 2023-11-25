@@ -1,11 +1,11 @@
 class Player extends Sprite{
     constructor({collisionBlocks=[], imageSource}){
-        super({imageSource})
+        super({position: {x: 100, y: 32}, imageSource});
         // Variable to determine the bottom of the character's hitbox.
-        this.position = {
-            charX: 100,
-            charY: 32
-        }
+        // this.position = {
+        //     charX: 100,
+        //     charY: 32
+        // }
         this.velocity={
             // We need a x and y axis for each veloctiy
             x: 0,
@@ -19,10 +19,6 @@ class Player extends Sprite{
         }
         this.gravity = 1
         this.collisionBlocks = collisionBlocks
-    }
-    draw(){
-        ctx.fillStyle = '#FF8F8F'
-        ctx.fillRect(this.position.charX, this.position.charY, this.charWidth, this.charHeight)
     }
     update(){
         this.position.charX += this.velocity.x
