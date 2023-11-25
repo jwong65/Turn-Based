@@ -25,7 +25,7 @@ const player = new Player({
             frameRate: 4,
             frameBuffer: 5,
             loop: true,
-            imageSource:'./assets/images/character/Owlet_Monster_Idle_4.png'
+            imageSource:'./assets/images/character/Owlet_Monster_Idle_4.png',
         },
         idleFacingLeft:{
             frameRate: 4,
@@ -67,6 +67,7 @@ function animationLoop(){
 
     player.velocity.x = 0
     if (keys.d.pressed){
+        // player.switchSprite
         player.velocity.x =4;
     }else if (keys.a.pressed){
         player.velocity.x =-4
