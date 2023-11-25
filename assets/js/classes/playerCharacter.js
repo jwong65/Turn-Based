@@ -15,18 +15,18 @@ class Player extends Sprite{
         this.charHeight = 64;
         // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
         this.sides = {
-            bottom: this.position.charY + this.charHeight
+            bottom: this.position.y + this.charHeight
         }
         this.gravity = 1
         this.collisionBlocks = collisionBlocks
     }
     update(){
-        this.position.charX += this.velocity.x
+        this.position.x += this.velocity.x
         // Horizontal collision
         this.checkforHorizontal()
         this.applyGravity()
         this.checkforVertical()
-        this.sides.bottom = this.position.charY + this.charHeight;        
+        this.sides.bottom = this.position.y + this.charHeight;        
     }
     checkforHorizontal(){
             
@@ -34,18 +34,18 @@ class Player extends Sprite{
         const collisionBlock = this.collisionBlocks[i]
 
         if(
-            this.position.charX <=collisionBlock.position.x+ collisionBlock.width &&
-            this.position.charX + this.charWidth >= collisionBlock.position.x &&
-            this.position.charY + this.charHeight >= collisionBlock.position.y &&
-            this.position.charY <= collisionBlock.position.y + collisionBlock.height
+            this.position.x <=collisionBlock.position.x+ collisionBlock.width &&
+            this.position.x + this.charWidth >= collisionBlock.position.x &&
+            this.position.y + this.charHeight >= collisionBlock.position.y &&
+            this.position.y <= collisionBlock.position.y + collisionBlock.height
         ){
             if(this.velocity.x < 0){
-                this.position.charX =
+                this.position.x =
                     collisionBlock.position.x + collisionBlock.width + 0.01 
                 break
             }
             if(this.velocity.x > 0){
-                this.position.charX = collisionBlock.position.x - this.charWidth - 0.01
+                this.position.x = collisionBlock.position.x - this.charWidth - 0.01
                 break
             }
         }
@@ -53,25 +53,25 @@ class Player extends Sprite{
 }
     applyGravity(){
             this.velocity.y += this.gravity
-            this.position.charY += this.velocity.y
+            this.position.y += this.velocity.y
     }
     checkforVertical(){
         for (let i = 0; i < this.collisionBlocks.length; i++) {
             const collisionBlock = this.collisionBlocks[i];
             if (
-                this.position.charX <= collisionBlock.position.x + collisionBlock.width &&
-                this.position.charX + this.charWidth >= collisionBlock.position.x &&
-                this.position.charY + this.charHeight >= collisionBlock.position.y &&
-                this.position.charY <= collisionBlock.position.y + collisionBlock.height
+                this.position.x <= collisionBlock.position.x + collisionBlock.width &&
+                this.position.x + this.charWidth >= collisionBlock.position.x &&
+                this.position.y + this.charHeight >= collisionBlock.position.y &&
+                this.position.y <= collisionBlock.position.y + collisionBlock.height
             ) {
                 if (this.velocity.y < 0) {
                     this.velocity.y = 0;
-                    this.position.charY = collisionBlock.position.y + collisionBlock.height + 0.01;
+                    this.position.y = collisionBlock.position.y + collisionBlock.height + 0.01;
                     break;
                 }
                 if (this.velocity.y > 0) {
                     this.velocity.y = 0;
-                    this.position.charY = collisionBlock.position.y - this.charHeight - 0.01;
+                    this.position.y = collisionBlock.position.y - this.charHeight - 0.01;
                     break;
                 }
             }
