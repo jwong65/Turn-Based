@@ -1,19 +1,17 @@
 class Player{
-    constructor({
-        collisionBlocks=[]
-    }){
+    constructor({collisionBlocks=[]}){
         // Variable to determine the bottom of the character's hitbox.
         this.position = {
-            charX: 64,
-            charY: 64
+            charX: 100,
+            charY: 32
         }
         this.velocity={
             // We need a x and y axis for each veloctiy
             x: 0,
             y: 0
         }
-        this.charWidth = 64;
-        this.charHeight = 64;
+        this.charWidth = 32;
+        this.charHeight = 32;
         // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
         this.sides = {
             bottom: this.position.charY + this.charHeight
@@ -27,17 +25,67 @@ class Player{
     }
     update(){
         this.position.charX += this.velocity.x
-        this.position.charY += this.velocity.y
-        this.position.bottom = this.position.charY +this.charHeight
+        // Horizontal collision
+        this.checkforHorizontal()
+        this.applyGravity()
+        this.checkforVertical()
+        this.sides.bottom = this.position.charY + this.charHeight;
         // Position is being increased consistently by the y velo.
-        if( this.sides.bottom +this.velocity.y <canvas.height){
-            this.velocity.y+= this.gravity
-            this.sides.bottom =this.position.charY + this.charHeight
-        } 
+        // if( this.sides.bottom +this.velocity.y <canvas.height){
+        //     this.velocity.y+= this.gravity
+        //     this.sides.bottom =this.position.charY + this.charHeight
+        // } 
         // Need this else statement otherwise it will not stop at the height of the bottom.
-        else {
-            this.velocity.y =0
-            this.position.charY = canvas.height - this.charHeight
+        
+    }
+    checkforHorizontal(){
+            
+    for (let i=0; i<this.collisionBlocks.length; i++){
+        const collisionBlock = this.collisionBlocks[i]
+
+        if(
+            this.position.charX <=collisionBlock.position.x+ collisionBlock.width &&
+            this.position.charX + this.charWidth >= collisionBlock.position.x &&
+            this.position.charY + this.charHeight >= collisionBlock.position.y &&
+            this.position.charY <= collisionBlock.position.y + collisionBlock.height
+        ){
+            if(this.velocity.x < 0){
+                this.position.charX =
+                    collisionBlock.position.x + collisionBlock.width + 0.01 
+                break
+            }
+            if(this.velocity.x > 0){
+                this.position.charX = collisionBlock.position.x - this.charWidth - 0.01
+                break
+            }
         }
     }
 }
+    applyGravity(){
+            this.velocity.y += this.gravity
+            this.position.charY += this.velocity.y
+    }
+    checkforVertical(){
+        for (let i = 0; i < this.collisionBlocks.length; i++) {
+            const collisionBlock = this.collisionBlocks[i];
+            if (
+                this.position.charX <= collisionBlock.position.x + collisionBlock.width &&
+                this.position.charX + this.charWidth >= collisionBlock.position.x &&
+                this.position.charY + this.charHeight >= collisionBlock.position.y &&
+                this.position.charY <= collisionBlock.position.y + collisionBlock.height
+            ) {
+                if (this.velocity.y < 0) {
+                    this.velocity.y = 0;
+                    this.position.charY = collisionBlock.position.y + collisionBlock.height + 0.01;
+                    break;
+                }
+                if (this.velocity.y > 0) {
+                    this.velocity.y = 0;
+                    this.position.charY = collisionBlock.position.y - this.charHeight - 0.01;
+                    break;
+                }
+            }
+        }
+    }
+}
+
