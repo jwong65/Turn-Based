@@ -22,12 +22,25 @@ class Player extends Sprite{
     }
     update(){
         // Testing for hitbox
-        ctx.fillStyle = 'rgba(0,0,225,0.25)'
-        ctx.fillRect(this.position.x, this.position.y, this.charWidth, this.charHeight)
+        // ctx.fillStyle = 'rgba(0,0,225,0.25)'
+        // ctx.fillRect(this.position.x, this.position.y, this.charWidth, this.charHeight)
         this.position.x += this.velocity.x
         // Horizontal collision
         this.checkforHorizontal()
         this.applyGravity()
+
+        // This is unneccesary because I resized the image to be exact pixels
+        this.hitbox={
+            position: {
+                x: this.position.x,
+                y: this.position.y,
+            },
+            charWidth: 32,
+            charHeight: 32
+        }
+        ctx.fillStyle='rgba(0,0,200, 0.25)'
+        ctx.fillRect(this.hitbox.position.x, this.hitbox.position.y, this.hitbox.charWidth, this.hitbox.charHeight)
+
         this.checkforVertical()
         this.sides.bottom = this.position.y + this.charHeight;        
     }
