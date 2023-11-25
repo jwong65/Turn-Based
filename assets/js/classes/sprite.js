@@ -5,6 +5,8 @@ class Sprite{
         this.image.src = imageSource
         this.image.onload =()=>{
             this.loaded = true
+            // this.charWidth = this.image.width
+            // this.charHeight = this.image.height
         }
         this.loaded = false
     }

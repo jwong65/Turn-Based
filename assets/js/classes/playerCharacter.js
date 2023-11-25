@@ -11,9 +11,9 @@ class Player extends Sprite{
             x: 0,
             y: 0
         }
-        this.charWidth = 64;
-        this.charHeight = 64;
-        // This is charY + height of the character. Need to have a const height so that can be applied to the fillRect.
+        this.charWidth = 32;
+        this.charHeight = 32;
+        // This is y position + height of the character. Need to have a const height so that can be applied to the fillRect.
         this.sides = {
             bottom: this.position.y + this.charHeight
         }
@@ -21,6 +21,9 @@ class Player extends Sprite{
         this.collisionBlocks = collisionBlocks
     }
     update(){
+        // Testing for hitbox
+        ctx.fillStyle = 'rgba(0,0,225,0.25)'
+        ctx.fillRect(this.position.x, this.position.y, this.charWidth, this.charHeight)
         this.position.x += this.velocity.x
         // Horizontal collision
         this.checkforHorizontal()
