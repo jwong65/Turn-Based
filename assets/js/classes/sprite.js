@@ -12,8 +12,10 @@ class Sprite{
         this.frameRate = frameRate
         // Simialr to how drawImage works this is to get the next frame
         this.currentFrame =0
+        // Elapsed frames will increase over time.
         this.elapsedFrames = 0
-        this.frameBuffer  = 2
+        // Frame buffer needs to be adjusted to control the animation speed.
+        this.frameBuffer  = 5
     }
     draw(){
         // This is so the background will not continue to load if the background is already drawn
@@ -41,11 +43,14 @@ class Sprite{
         }
         // Similar to my previous idle()
         updateFrame(){
-            if(this.currentFrame<this.frameRate -1){
-                this.currentFrame++
-            }
-            else{
-                this.currentFrame=0
+            this.elapsedFrames++
+            if(this.elapsedFrames%this.frameBuffer ===0){
+                if(this.currentFrame<this.frameRate -1){
+                    this.currentFrame++
+                }
+                else{
+                    this.currentFrame=0
+                }    
             }
         }
 }
