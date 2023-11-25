@@ -71,6 +71,10 @@ function animationLoop(){
         player.velocity.x =4;
     }else if (keys.a.pressed){
         player.velocity.x =-4
+        player.switchSprite('walkLeft')
+    }
+    else{
+        player.switchSprite('idleFacingRight')
     }
     // This will call the draw function from the Player class.
     player.draw()
