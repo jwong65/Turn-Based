@@ -1,5 +1,5 @@
 class Sprite{
-    constructor({position, imageSource, frameRate =1, animations, frameBuffer = 5, loop = true
+    constructor({position, imageSource, frameRate =1, animations, frameBuffer = 5, loop = true, autoplay = true
     }){
         this.position = position
         this.image = new Image()
@@ -19,6 +19,7 @@ class Sprite{
         this.frameBuffer  = frameBuffer
         this.animations = animations
         this.loop = loop
+        this.autoplay = autoplay
         if(this.animations){
             for (let key in this.animations){
                 const image = new Image()
