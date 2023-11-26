@@ -58,7 +58,7 @@ class Sprite{
                 if(this.currentFrame<this.frameRate -1){
                     this.currentFrame++
                 }
-                else{
+                else if(this.loop){
                     this.currentFrame=0
                 }    
             }
