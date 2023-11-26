@@ -3,11 +3,10 @@ const ctx = canvas.getContext('2d')
 //  64*16 64*9
 canvas.width = 1024 
 canvas.height = 576
-// const collisionBlocks = []
 
 const parsedCollisions = collisionsLevel1.parse2D()
 const collisionBlocks= parsedCollisions.createObjectsFrom2D()
-console.log(parsedCollisions)
+// console.log(parsedCollisions)
 
 const backgroundLevel = new Sprite({
     // The position will be 0,0 as it draws from the top left.
@@ -51,10 +50,12 @@ const player = new Player({
 const doors = [
     new Sprite({
         position:{
-            x: 0,
-            y: 0
+            x: 660,
+            y: 400
         },
-        imageSource: './assets/images/doorOpen.png'
+        imageSource: './assets/images/doorOpen.png',
+        frameRate: 5,
+        frameBuffer: 5
     })
 ]
 
@@ -74,7 +75,11 @@ function animationLoop(){
     collisionBlocks.forEach((collisionBlock)=>{
         collisionBlock.draw()
     })
-
+    // Doors will be animated in the canvas.
+    doors.forEach((door)=>{
+        door.draw()
+    })
+    
     player.velocity.x = 0
     if (keys.d.pressed){
         player.switchSprite('walkRight')
