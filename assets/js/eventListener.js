@@ -6,11 +6,13 @@ window.addEventListener('keydown', (event)=>{
         case 'ArrowUp':
             for (let i=0; i<doors.length; i++){
                 const door = doors[i]
-                if(player.position.x <= door.position.x + door.charWidth &&
-                    player.position.x + this.charWidth >= door.position.x &&
-                    player.position.y + this.charHeight >= door.position.y &&
+                // console.log('Player:', player.position.x, player.position.y);
+                // console.log('Door:', door.position.x, door.position.y, door.charWidth, door.charHeight);
+                if(player.position.x <=door.position.x+ door.charWidth &&
+                    player.position.x + player.charWidth >= door.position.x &&
+                    player.position.y + player.charHeight >= door.position.y &&
                     player.position.y <= door.position.y + door.charHeight){
-                        console.log('hello door.')
+                        console.log('Door collision')
                     }
                 
             }

@@ -27,14 +27,14 @@ class Player extends Sprite{
         this.applyGravity()
 
         // This is unneccesary because I resized the image to be exact pixels
-        // this.hitbox={
-        //     position: {
-        //         x: this.position.x,
-        //         y: this.position.y,
-        //     },
-        //     charWidth: 32,
-        //     charHeight: 32
-        // }
+        this.hitbox={
+            position: {
+                x: this.position.x,
+                y: this.position.y,
+            },
+            charWidth: 32,
+            charHeight: 32
+        }
         
         // ctx.fillRect(this.hitbox.position.x, this.hitbox.position.y, this.hitbox.charWidth, this.hitbox.charHeight)
         
