@@ -1,5 +1,6 @@
 class Sprite{
-    constructor({position, imageSource, frameRate =1, animations}){
+    constructor({position, imageSource, frameRate =1, animations, frameBuffer = 5, loop
+    }){
         this.position = position
         this.image = new Image()
         this.image.src = imageSource
@@ -15,8 +16,9 @@ class Sprite{
         // Elapsed frames will increase over time.
         this.elapsedFrames = 0
         // Frame buffer needs to be adjusted to control the animation speed.
-        this.frameBuffer  = 5
+        this.frameBuffer  = frameBuffer
         this.animations = animations
+        this.loop = loop
         if(this.animations){
             for (let key in this.animations){
                 const image = new Image()
@@ -26,7 +28,7 @@ class Sprite{
         }
     }
     draw(){
-        // This is so the background will not continue to load if the background is already drawn
+        //  is so the background will not continue to load if the background is already drawn
         if(!this.loaded) return
         const cropbox={
             position:{

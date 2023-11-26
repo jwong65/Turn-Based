@@ -55,7 +55,8 @@ const doors = [
         },
         imageSource: './assets/images/doorOpen.png',
         frameRate: 5,
-        frameBuffer: 5
+        frameBuffer: 5,
+        loop: false
     })
 ]
 
