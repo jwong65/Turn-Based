@@ -39,6 +39,8 @@ class Sprite{
             width: this.charWidth,
             height: this.charHeight
         }
+        ctx.fillStyle = 'rgba(0,0,220, 0.25)'
+        ctx.fillRect(this.position.x, this.position.y, this.charWidth, this.charHeight)
         ctx.drawImage(
             this.image,
             cropbox.position.x,
