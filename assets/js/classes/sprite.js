@@ -1,5 +1,5 @@
 class Sprite{
-    constructor({position, imageSource, frameRate =1, animations, frameBuffer = 5, loop
+    constructor({position, imageSource, frameRate =1, animations, frameBuffer = 5, loop = true
     }){
         this.position = position
         this.image = new Image()
