@@ -47,6 +47,15 @@ const player = new Player({
         }
     }
 })
+const doors = [
+    new Sprite({
+        position:{
+            x: 0,
+            y: 0
+        },
+        imageSource: './assets/images/doorOpen.png'
+    })
+]
 
 const keyName  =['w','a','d','ArrowUp','ArrowLeft','ArrowRight']
 const keys = {};
