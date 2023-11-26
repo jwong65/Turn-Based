@@ -54,6 +54,10 @@ class Sprite{
         }
         // Similar to my previous idle()
         updateFrame(){
+            // If autoplay is false then it will not update the frames.
+            if(!this.autoplay){
+                return
+            }
             this.elapsedFrames++
             if(this.elapsedFrames%this.frameBuffer ===0){
                 if(this.currentFrame<this.frameRate -1){

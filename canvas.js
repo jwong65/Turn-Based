@@ -51,13 +51,15 @@ const doors = [
     new Sprite({
         position:{
             x: 660,
-            y: 400
+            // y= 400 with the doorOpen
+            // y= 428 with DoorOpening.
+            y: 428
         },
-        imageSource: './assets/images/doorOpen.png',
-        frameRate: 5,
-        frameBuffer: 5,
+        imageSource: './assets/images/doorOpening.png',
+        frameRate: 7,
+        frameBuffer: 10,
         loop: false,
-        autoplay: true
+        autoplay: false
     })
 ]
 
