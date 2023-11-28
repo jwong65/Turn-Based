@@ -17,7 +17,7 @@ class Player extends Sprite{
         this.sides = {
             bottom: this.position.y + this.charHeight
         }
-        this.gravity = 1
+        this.gravity = .33
         this.collisionBlocks = collisionBlocks
     }
     update(){
@@ -51,7 +51,7 @@ class Player extends Sprite{
         this.frameRate = this.animations[name].frameRate
         this.frameBuffer = this.animations[name].frameBuffer
     }
-    
+
     checkforHorizontal(){
             
     for (let i=0; i<this.collisionBlocks.length; i++){
@@ -76,8 +76,12 @@ class Player extends Sprite{
     }
 }
     applyGravity(){
-            this.velocity.y += this.gravity
-            this.position.y += this.velocity.y
+        const maxDownwardVelocity = 10; 
+
+        this.velocity.y = Math.min(this.velocity.y, maxDownwardVelocity);
+        
+        this.velocity.y += this.gravity
+        this.position.y += this.velocity.y
     }
     checkforVertical(){
         for (let i = 0; i < this.collisionBlocks.length; i++) {

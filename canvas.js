@@ -85,10 +85,10 @@ function animationLoop(){
     player.velocity.x = 0
     if (keys.d.pressed){
         player.switchSprite('walkRight')
-        player.velocity.x =4;
+        player.velocity.x =1;
         player.lastDirectionface = 'right'
     }else if (keys.a.pressed){
-        player.velocity.x =-4
+        player.velocity.x =-1
         player.switchSprite('walkLeft')
         player.lastDirectionface = 'left'
     }
