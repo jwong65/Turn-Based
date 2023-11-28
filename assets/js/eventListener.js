@@ -16,6 +16,7 @@ window.addEventListener('keydown', (event)=>{
                         // 
                         document.getElementById('message').innerHTML=`Door has been pressed ` + doorclick + ' Times.'
                         doorclick++
+                        return
                     }
                 
             }
