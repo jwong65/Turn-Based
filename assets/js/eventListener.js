@@ -1,4 +1,4 @@
-
+var doorclick = 0
 window.addEventListener('keydown', (event)=>{
     // console.log(event)
     switch(event.key){
@@ -13,6 +13,9 @@ window.addEventListener('keydown', (event)=>{
                     player.position.y + player.charHeight >= door.position.y &&
                     player.position.y <= door.position.y + door.charHeight){
                         console.log('Door collision')
+                        // 
+                        document.getElementById('message').innerHTML=`Door has been pressed` + doorclick + 'Times.'
+                        doorclick++
                     }
                 
             }

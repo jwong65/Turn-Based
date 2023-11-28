@@ -4,7 +4,7 @@ class Player extends Sprite{
         // Variable to determine the bottom of the character's hitbox.
         this.position = {
             x: 100,
-            y: 32
+            y: 160
         }
         this.velocity={
             // We need a x and y axis for each veloctiy
@@ -17,7 +17,7 @@ class Player extends Sprite{
         this.sides = {
             bottom: this.position.y + this.charHeight
         }
-        this.gravity = .33
+        this.gravity = .25
         this.collisionBlocks = collisionBlocks
     }
     update(){
@@ -76,12 +76,13 @@ class Player extends Sprite{
     }
 }
     applyGravity(){
-        const maxDownwardVelocity = 5; 
+        const maxDownwardVelocity = 1; 
 
-        this.velocity.y = Math.min(this.velocity.y, maxDownwardVelocity);
-        
         this.velocity.y += this.gravity
         this.position.y += this.velocity.y
+        
+        this.velocity.y = Math.min(this.velocity.y, maxDownwardVelocity);
+        
     }
     checkforVertical(){
         for (let i = 0; i < this.collisionBlocks.length; i++) {
