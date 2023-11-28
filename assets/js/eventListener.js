@@ -12,7 +12,7 @@ window.addEventListener('keydown', (event)=>{
                     player.position.x + player.charWidth >= door.position.x &&
                     player.position.y + player.charHeight >= door.position.y &&
                     player.position.y <= door.position.y + door.charHeight){
-                        console.log('Door collision')
+                        // console.log('Door collision')
                         // 
                         document.getElementById('message').innerHTML=`Door has been pressed ` + doorclick + ' Times.'
                         doorclick++
@@ -21,8 +21,9 @@ window.addEventListener('keydown', (event)=>{
             }
             if (player.velocity.y === 0)
             {
-                player.velocity.y = -8
+                player.velocity.y = -7.8
             }
+            // console.log("The velocity is now: "+ player.velocity.y)
             break
         case 'a':
         case 'ArrowLeft':
