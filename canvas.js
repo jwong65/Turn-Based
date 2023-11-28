@@ -69,10 +69,21 @@ keyName.forEach(key=>{
     keys[key] = {pressed: false}
 })
 
+let lastTime = performance.now();
 function animationLoop(){
-    // fillRect( x value, y value, width, height) This is the background of the whole canvas.
-    // ctx.fillStyle='black'
-    // ctx.fillRect(0,0, canvas.width, canvas.height)
+    const currentTime = performance.now();
+    const deltaTime = (currentTime - lastTime) / 1000; // convert to seconds
+    update(deltaTime)
+    
+    lastTime=currentTime
+    // Callback to the animation keep animating.
+    window.requestAnimationFrame(animationLoop)
+
+}
+
+function update(deltaTime) {
+    // Update game logic based on deltaTime
+    // This makes the game frame rate independent
     backgroundLevel.draw()
     collisionBlocks.forEach((collisionBlock)=>{
         collisionBlock.draw()
@@ -104,9 +115,8 @@ function animationLoop(){
     player.draw()
     // This will continue the update the character 
     player.update()
-
-    // Callback to the animation keep animating.
-    window.requestAnimationFrame(animationLoop)
-
+    player.update(deltaTime);
+    // other updates
 }
+
 animationLoop()
