@@ -14,7 +14,7 @@ window.addEventListener('keydown', (event)=>{
                     player.position.y <= door.position.y + door.charHeight){
                         console.log('Door collision')
                         // 
-                        document.getElementById('message').innerHTML=`Door has been pressed` + doorclick + 'Times.'
+                        document.getElementById('message').innerHTML=`Door has been pressed ` + doorclick + ' Times.'
                         doorclick++
                     }
                 
@@ -47,7 +47,7 @@ window.addEventListener('keyup', (event)=>{
             break
         case 'w':
         case 'ArrowUp':
-            if (player.velocity.y < 0) {
+            if (player.velocity.y > 0) {
                 player.velocity.y = 0;
             }
             break
