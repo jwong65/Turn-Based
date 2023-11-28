@@ -1,4 +1,4 @@
-const canvas = document.querySelector('canvas')
+const canvas = document.getElementById('gameCanvas')
 const ctx = canvas.getContext('2d')
 //  64*16 64*9
 canvas.width = 1024 
@@ -23,25 +23,25 @@ const player = new Player({
     animations:{
         idleFacingRight:{
             frameRate: 4,
-            frameBuffer: 5,
+            frameBuffer: 11,
             loop: true,
             imageSource:'./assets/images/character/Owlet_Monster_Idle_4.png',
         },
         idleFacingLeft:{
             frameRate: 4,
-            frameBuffer: 5,
+            frameBuffer: 11,
             loop: true,
             imageSource: './assets/images/character/Owlet_Monster_Idle_Left_4.png'
         },
         walkLeft:{
             frameRate: 6,
-            frameBuffer: 5,
+            frameBuffer: 11,
             loop: true,
             imageSource: './assets/images/character/Owlet_Monster_Walk_Left_6.png'
         },
         walkRight:{
             frameRate: 6,
-            frameBuffer: 5,
+            frameBuffer: 11,
             loop: true,
             imageSource: './assets/images/character/Owlet_Monster_Walk_6.png'
         }
@@ -70,8 +70,6 @@ keyName.forEach(key=>{
 })
 
 function animationLoop(){
-    // Callback to the animation keep animating.
-    window.requestAnimationFrame(animationLoop)
     // fillRect( x value, y value, width, height) This is the background of the whole canvas.
     // ctx.fillStyle='black'
     // ctx.fillRect(0,0, canvas.width, canvas.height)
@@ -106,6 +104,9 @@ function animationLoop(){
     player.draw()
     // This will continue the update the character 
     player.update()
+
+    // Callback to the animation keep animating.
+    window.requestAnimationFrame(animationLoop)
 
 }
 animationLoop()
