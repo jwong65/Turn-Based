@@ -25,4 +25,7 @@ Common code blocks for switch case, [W3 resource](https://www.w3schools.com/js/j
 Javascript classes, needed for creating objects in the game. [MDN Resource on Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) and MDN documentation on the [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) keyword for extending the classes. <br />
 Javascript documentation for constructor from [W3](https://www.w3schools.com/js/js_classes.asp).
 
+### Standardizing Framerates
+Preventing the game from running too long [Chris Courses](https://chriscourses.com/blog/standardize-your-javascript-games-framerate-for-different-monitors)
+
 Will update the wiki later with this readme as a template after the project is complete.
